@@ -1,9 +1,6 @@
 package com.ubs.model;
 
-/**
- * Represents a shared facility / resource (e.g. Meeting Room A, Treadmill 2,
- * Workstation 7) that has a fixed capacity of simultaneous users.
- */
+
 public class Resource {
     private int id;
     private String name;

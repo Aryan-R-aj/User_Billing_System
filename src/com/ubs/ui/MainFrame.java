@@ -3,11 +3,7 @@ package com.ubs.ui;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Top-level application window. Hosts a tabbed layout for every functional
- * area of the system: Dashboard, Resources, Services (pricing), Usage
- * (start/stop -> billing), and Bill History.
- */
+
 public class MainFrame extends JFrame {
 
     private final DashboardPanel dashboardPanel;
@@ -45,7 +41,7 @@ public class MainFrame extends JFrame {
         add(tabs, BorderLayout.CENTER);
     }
 
-    /** Re-pulls fresh data into every tab; called after any add/start/stop/delete action. */
+
     public void refreshAll() {
         dashboardPanel.refresh();
         resourcePanel.refresh();

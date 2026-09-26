@@ -1,10 +1,6 @@
 package com.ubs.model;
 
-/**
- * Represents a pricing plan ("service") attached to a resource, e.g.
- * "Hourly usage" for a meeting room: first hour costs X, every additional
- * hour (or part thereof, rounded up) costs Y.
- */
+
 public class ServicePlan {
     private int id;
     private int resourceId;

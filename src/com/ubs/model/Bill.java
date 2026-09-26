@@ -1,10 +1,5 @@
 package com.ubs.model;
 
-/**
- * Represents a finalized bill generated when a usage session ends.
- * Bills are immutable historical records - once created they are never
- * modified, only ever read/listed/exported.
- */
 public class Bill {
     private int id;
     private int sessionId;

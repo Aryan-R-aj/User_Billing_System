@@ -8,12 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Data access object for the "resources" table. Every read also computes
- * the current number of ACTIVE usage sessions for that resource so the UI
- * can show live "X / Y in use" capacity information without a second
- * round-trip.
- */
+
 public class ResourceDAO {
 
     public Resource insert(String name, String category, int capacity) throws SQLException {

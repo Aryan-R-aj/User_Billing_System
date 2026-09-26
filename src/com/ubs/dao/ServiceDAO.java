@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Data access object for the "services" (pricing plans) table. */
+
 public class ServiceDAO {
 
     public ServicePlan insert(int resourceId, String serviceName, double firstHourPrice, double additionalHourPrice) throws SQLException {

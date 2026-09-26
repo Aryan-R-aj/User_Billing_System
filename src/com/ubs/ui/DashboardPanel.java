@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.List;
 
-/** Landing tab: quick at-a-glance stats about resources, occupancy and revenue. */
+
 public class DashboardPanel extends JPanel {
 
     private static final DecimalFormat INR = new DecimalFormat("\u20B90.00");

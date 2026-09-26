@@ -5,14 +5,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * Central point for obtaining a JDBC connection to the embedded SQLite
- * database and for making sure the required schema exists.
- *
- * The database file is created (if absent) in the working directory as
- * "usage_billing.db". All DAO classes obtain connections through this
- * class rather than talking to DriverManager directly.
- */
 public final class DatabaseManager {
 
     private static final String DB_FILE = "usage_billing.db";

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-/** Tab showing the full, immutable billing history with search and CSV export. */
+
 public class BillHistoryPanel extends JPanel {
 
     private static final DecimalFormat INR = new DecimalFormat("\u20B90.00");
@@ -135,7 +135,7 @@ public class BillHistoryPanel extends JPanel {
         updateSummaryForVisibleRows();
     }
 
-    /** Simple case-insensitive substring filter across resource/service/user columns. */
+
     private static class RowFilterCombo extends javax.swing.RowFilter<DefaultTableModel, Integer> {
         private final Pattern pattern;
 

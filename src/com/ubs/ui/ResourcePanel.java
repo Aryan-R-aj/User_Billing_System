@@ -10,11 +10,6 @@ import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Tab for defining resources/entities (meeting rooms, gym machines,
- * workstations...) and their capacity. Includes a full "Add Resource"
- * form plus a live table showing current occupancy for every resource.
- */
 public class ResourcePanel extends JPanel {
 
     private final ResourceDAO resourceDAO = new ResourceDAO();

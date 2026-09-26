@@ -2,11 +2,7 @@ package com.ubs.model;
 
 import java.time.LocalDateTime;
 
-/**
- * Represents one instance of a user occupying a resource, from start to
- * (eventually) stop. While status is ACTIVE the session occupies one slot
- * of the resource's capacity.
- */
+
 public class UsageSession {
     public static final String ACTIVE = "ACTIVE";
     public static final String COMPLETED = "COMPLETED";

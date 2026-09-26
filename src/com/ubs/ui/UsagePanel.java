@@ -22,13 +22,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * The heart of the application: starting usage ("add" a new occupancy of a
- * resource) and stopping it (which triggers bill generation). Capacity is
- * enforced by BillingService; this panel just reflects the outcome and, as
- * a usability touch, ticks a live stopwatch + running cost estimate for
- * every session that is currently active.
- */
 public class UsagePanel extends JPanel {
 
     private static final DateTimeFormatter DISPLAY_FMT = DateTimeFormatter.ofPattern("dd MMM, HH:mm:ss");

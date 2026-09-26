@@ -16,19 +16,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * Encapsulates all of the business rules described in the assignment:
- *   - a resource must never host more concurrent users than its capacity
- *   - starting usage is rejected outright when the resource is full
- *   - stopping usage records the end time, computes total duration,
- *     rounds it UP to the next full hour, applies the pricing rule
- *     (first hour price + (billedHours - 1) * additional hour price)
- *     and produces an immutable Bill record.
- *
- * The capacity check and the session insert happen inside a single JDBC
- * transaction (and inside a synchronized method) so that two concurrent
- * "start usage" requests can never both succeed once the resource is full.
- */
+
 public class BillingService {
 
     private static final DateTimeFormatter FMT = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
@@ -38,11 +26,7 @@ public class BillingService {
     private final UsageSessionDAO usageSessionDAO = new UsageSessionDAO();
     private final BillDAO billDAO = new BillDAO();
 
-    /**
-     * Starts a new usage session for the given resource/service/user,
-     * after verifying capacity is available. Throws BillingException if
-     * the resource is already full.
-     */
+
     public synchronized UsageSession startUsage(int resourceId, int serviceId, String userName) throws SQLException, BillingException {
         try (Connection conn = DatabaseManager.getConnection()) {
             conn.setAutoCommit(false);
@@ -108,16 +92,7 @@ public class BillingService {
         }
     }
 
-    /**
-     * Pricing rule engine, kept separate and package-visible so it can be
-     * unit-exercised independently of the database.
-     *
-     * Duration beyond a full hour is rounded UP to the next complete hour.
-     * A session lasting 1h20m is billed as 2 hours; a session lasting
-     * exactly 1h is billed as 1 hour. Any usage at all (even a few
-     * seconds) is billed a minimum of 1 hour, since there is no "0 hour"
-     * pricing tier defined by the assignment.
-     */
+
     Bill calculateBill(UsageSession session, Resource resource, ServicePlan plan, LocalDateTime endTime) {
         Duration duration = Duration.between(session.getStartTime(), endTime);
         long totalMinutes = Math.max(duration.toMinutes(), 0);

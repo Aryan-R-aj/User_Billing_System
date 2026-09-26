@@ -13,10 +13,7 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.List;
 
-/**
- * Tab for defining pricing plans ("services") attached to a resource:
- * first-hour price and every-additional-hour price, in INR.
- */
+
 public class ServicePanel extends JPanel {
 
     private final ResourceDAO resourceDAO = new ResourceDAO();

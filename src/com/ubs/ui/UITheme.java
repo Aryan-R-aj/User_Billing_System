@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-/** Small collection of shared colors/fonts so every panel looks consistent. */
 public final class UITheme {
     public static final Color BG = new Color(0xF4F6FA);
     public static final Color CARD_BG = Color.WHITE;
