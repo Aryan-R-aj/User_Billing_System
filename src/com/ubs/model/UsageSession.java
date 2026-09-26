@@ -12,10 +12,10 @@ public class UsageSession {
     private int serviceId;
     private String userName;
     private LocalDateTime startTime;
-    private LocalDateTime endTime; // null while active
+    private LocalDateTime endTime;
     private String status;
 
-    // Convenience display fields, populated by joined queries.
+
     private String resourceName;
     private String serviceName;
 
