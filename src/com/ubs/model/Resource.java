@@ -8,7 +8,7 @@ public class Resource {
     private int capacity;
     private String createdAt;
 
-    // Not persisted directly - computed at read time for convenience in the UI.
+
     private int activeCount;
 
     public Resource() {
